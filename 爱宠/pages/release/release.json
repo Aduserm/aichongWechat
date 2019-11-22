@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "快速咨询",
+  "usingComponents": {
+    "wux-upload": "../../dist/upload/index"
+  }
+}

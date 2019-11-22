@@ -1,0 +1,110 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refesh" enable-back-to-top="true">
+    <view class="topView">
+      <!-- <image src='../../static/images/scan.jpg' class='scan' bindtap='scan'></image> -->
+      <view class="searchView" bindtap='toSearch'>
+        <view class="search-icon">
+          <image class='searchimg' src='static/images/find.png'></image>
+        </view>
+        <view class="search-text">
+          <text class='searchText'>搜文章</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 功能标题 -->
+    <view class="midView">
+      <swiper style="height: 260rpx" indicator-dots="{{true}}" autoplay="{{false}}" circular="{{true}}" indicator-active-color="#5b6b73">
+        <swiper-item>
+          <view class="function">
+            <view class="fun-img" bindtap='{{item.bdtap}}' wx:for="{{topOneList}}" wx:key="tonekey">
+              <image src='{{item.src}}'></image>
+              <view class="fun-text">
+                <text>{{item.title}}</text>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+<!-- 有需要再显示，目前只用到3个 -->
+        <!-- <swiper-item>
+          <view class='function'>
+            <view class="fun-img" bindtap='{{item.bdtap}}' wx:for="{{topTwoList}}" wx:key="ttwokey">
+              <image src='{{item.src}}'></image>
+              <view class="fun-text">
+                <text>{{item.title}}</text>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+
+        <swiper-item>
+          <view class='function'>
+            <view class="fun-img" bindtap='{{item.bdtap}}' wx:for="{{topThreeList}}" wx:key="tthreekey">
+              <image src='{{item.src}}'></image>
+              <view class="fun-text">
+                <text>{{item.title}}</text>
+              </view>
+            </view>
+          </view>
+        </swiper-item> -->
+      </swiper>
+    </view>
+
+    <view class='mainbox'>
+
+      <official-account class="alwaysTop">
+      </official-account>
+      <view class="feed-item" wx:for="{{results}}" wx:key="unique" wx:for-item="item" bindtap="toQuestion" data-index="{{index}}">
+        <view class="feed-source dwr">
+          <a class="">
+            <view class="avatar">
+              <image src="{{item.avatar}}" wx:if="{{item.avatar}}"></image>
+              <image src="../../static/images/avatar.jpg" wx:else></image>
+            </view>
+            <text class='nickname' wx:if="{{item.nickname}}">{{item.nickname}}</text>
+            <!-- <text class='nickname' wx:if="{{item.nickname}}">{{item.nickname}}</text> -->
+            <text class='nickname' wx:else>游客</text>
+          </a>
+          <view class='datebox ight'>{{item.createDate}}</view>
+
+        </view>
+        <view class="feed-content">
+          <view class="question" qid="{{question_id}}">
+            <a class="question-link">
+              <text>{{item.quest}}</text>
+            </a>
+          </view>
+          <view class="answer-body">
+
+            <text class="answer-txt" aid="{{answer_id}}">{{item.qtDesc}}</text>
+          </view>
+          <view class="picV">
+            <view class='imgbox' wx:for="{{item.zxSysFileDts}}" wx:for-item="pic" wx:key="img" wx:for-index="picIndex">
+              <image class="picI" src='{{pic.fileCode}}' binderror='photoError' data-errorimg="{{picIndex}}" data-rindex="{{index}}"></image>
+            </view>
+            <text class="number" wx:if="{{results[index].fileCount > 3}}">{{results[index].fileCount}}P</text>
+          </view>
+          <!-- 资金这块以后再说 -->
+          <!-- <view class='row1'>
+            <view class='row1-left'>
+              <image src='../../static/images/money.png' class='imgbox2' style='padding-bottom:5rpx;'></image>
+              <text>¥1{{item.consultPrice}}</text>
+            </view>
+            <view class='row1-left'>
+              <image src="../../static/images/comment2.png" class='imgbox2'></image>
+              <text>{{item.replyCount}}</text>
+            </view>
+            <view class='row1-left' wx:if="{{item.reportCount}}">
+              <image src="../../static/images/hosreport.png" class='imgbox2' style='width:36rpx;height:36rpx;'></image>
+              <text>{{item.reportCount}}</text>
+            </view>
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>

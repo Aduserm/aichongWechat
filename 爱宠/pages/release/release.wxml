@@ -1,0 +1,60 @@
+<form bindsubmit="formSubmit" bindreset='formReset'>
+  <view class="box">
+    <view class='title'>
+      <input placeholder='请输入要发布的动态' placeholder-class='placeholder1' name="quest" maxlength='{{questLen}}'></input>
+    </view>
+    <view class='content'>
+      <textarea class='textarea1' wx:if='{{phoneFlag}}' name="qtDesc" maxlength='{{noteMaxLen}}' placeholder-class='placeholder1' placeholder='请输入要发布的详细内容' bindinput="bindWordLimit" value='{{qtDesc}}' hidden='{{qtDescFlag}}'></textarea>
+      <view wx:if="{{enclosureFlag}}">
+        <view class="bubble left " wx:for="{{audioList}}" wx:for-item="audioItem" wx:key="audiokey" wx:for-index="audioIndex">
+          <view class="bbcontent  {{audioTime<3?'small':audioTime<6?'medium':'big'}}" bindtap='audioPlay' data-src="{{audioItem.src}}" data-srcindex="{{audioIndex}}">
+            <image src='{{audioIndex == chatId?yyicon1:yyicon2}}'></image>
+            <text>{{audioItem.audioTime}}s</text>
+            <image class='audioimgright' src='/static/images/del3.png' catchtap='delAudio' data-delaudioindex="{{audioIndex}}"></image>
+          </view>
+        </view>
+      </view>
+      <view class='style1'>
+        <text class="wordLimit ff-hv ">{{currentNoteLen|0}}/{{noteMaxLen}}个字</text>
+      </view>
+      <view class='tuspace'>
+        <view class="image">
+          <view class="upImage" wx:for="{{imgs}}" wx:for-item="item" wx:key="*this" bindtap='TakepreviewImg' data-src="{{item}}" data-list="{{imgs}}">
+            <image src="{{item}}" class='img-add'></image>
+            <view class="delete-btn" data-index="{{index}}" catchtap="deleteImg">
+              <image src='/static/images/del.png' class='del'></image>
+            </view>
+          </view>
+          <view class="upload-img-btn" bindtap="chooseImg">
+            <image src='/static/images/addimg.png' class='add-png'> </image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='contentbottom'>
+      <view class='reportList'>
+        <view class='report' wx:for="{{reports}}" bindtap='toPersonalDetail' data-uuid="{{uuid}}" wx:key="report" wx:for-item="itemReport" data-reportindex="{{index}}">
+          <image class='reportimg' src='/static/images/report.png'></image>
+          <view class='reporttext'>{{itemReport.modcheckdate}}-{{itemReport.modality}}-{{itemReport.dengjipart}}</view>
+          <image class='reportimgright' src='/static/images/del3.png' catchtap='delReport' data-reportindex="{{index}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='tipsbox'>
+    <text>注意事项:
+1.
+2.
+</text>
+  </view> -->
+
+  <view class='bottom'>
+
+    <button class='arc_btn ' hover-class='btnhover' form-type='submit' disabled='{{submitFlag}}'>发布</button>
+    <view class='resetbox'>
+      请确认信息 如需修改
+      <button formType="reset" class='btn_reset' hover-class='resethover'>点此</button>重置
+      <view class="msg1">©温州市卫生健康委员会</view>
+    </view>
+  </view>
+</form>

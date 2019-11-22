@@ -1,0 +1,227 @@
+/* pages/ucenter/index/index.wxss */
+
+.container {
+  height: 100vh;
+  box-sizing: border-box;
+  background: #fafafa;
+  width: 100%;
+}
+
+.users {
+  width: 100%;
+  position: absolute;
+  top: -25%;
+}
+
+.box-white {
+  background: #fff;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 50px;
+  position: relative;
+  height: 300rpx;
+  border-radius: 8px;
+  box-shadow: 0 0px 1px #c9c6c6;
+  top: 50px;
+}
+
+.flex-wrp {
+  display: flex;
+}
+
+.flex-tab {
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.flex-item {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.user {
+  width: 100%;
+  background: -webkit-linear-gradient(#faa755, #ea9518);
+  height: 230rpx;
+  box-shadow: 0 1px 1px #c9c6c6;
+}
+
+.user .userinfo-avatar {
+  flex: 1;
+  display: inline-block;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 80rpx;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  /*考虑浏览器兼容性*/
+  -moz-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.user .user-info {
+  flex: 5;
+  text-align: center;
+}
+
+.user .user-info text {
+  display: block;
+  font-size: 12px;
+}
+
+.user .user-info .userinfo-nickname {
+  padding: 8rpx 0 10rpx 0;
+  font-size: 40rpx;
+  color: black;
+  font-weight: 700;
+}
+
+.user .user-info .edit {
+  font-size: 24rpx;
+  color: #101010;
+  line-height: 34rpx;
+  margin-top: 5px;
+}
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.me {
+  padding: 0 15px;
+  width: 100%;
+  background: white;
+  border-top-width: 95%;
+  position: absolute;
+  bottom: 5px;
+}
+
+.me-item {
+  width: 50%;
+  padding: 0;
+  float: left;
+  border-top: solid 0.5px #dfdfdfaf;
+}
+
+.me-image {
+  margin: 0 auto;
+  width: 25px;
+  height: 25px;
+}
+
+.me-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.my-icon {
+  width: 100%;
+  height: 100%;
+  margin: 12px 0;
+}
+
+.my-righticon {
+  width: 100%;
+  height: 100%;
+  margin: 12px 0;
+  line-height: 42px;
+}
+
+.right-text {
+  position: absolute;
+  bottom: 12px;
+  left: -20px;
+}
+
+.me-name {
+  margin-top: 5px;
+  text-align: center;
+  color: rgb(190, 190, 190);
+  font-size: 32rpx;
+}
+
+.me-xx {
+  /* margin-top: 5px; */
+  text-align: center;
+  color: #333;
+  font-size: 20px;
+}
+
+.my {
+  margin: 100px 0 20px 0;
+  width: 100%;
+}
+
+.my .my-item {
+  width: 100%;
+  background: #fff;
+  padding: 0 0 0 10px;
+  border-bottom: solid 1px #ebebeb;
+  height: 45px;
+}
+
+.my .my-item .myitem-icon {
+  flex: 1;
+  position: relative;
+}
+
+.my .my-item .myitem-icon image {
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  line-height: 45px;
+}
+
+.my .my-item .myitem-righticon image {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  line-height: 45px;
+  vertical-align: middle;
+}
+
+.my .my-item .myitem-righticon {
+  position: relative;
+}
+
+.my .my-item .myitem-name {
+  flex: 5;
+  text-align: left;
+  font-size: 34rpx;
+  color: #6d6d6d;
+  line-height: 45px;
+}
+
+.my .my-item .myitem-name text {
+  font-size: 30rpx;
+}
+
+.my .my-item .myitem-right {
+  flex: 1;
+  font-size: 34rpx;
+  color: #6d6d6d;
+  line-height: 42px;
+}
+
+.my .my-item:last-child .myitem-name {
+  border-bottom: none;
+}
+
+.margin-b {
+  margin-bottom: 30rpx;
+}
+
+.bdtext {
+  vertical-align: middle;
+  color: #666;
+  position: absolute;
+  top: 25%;
+  left: -40%;
+}
+
+.msg1 {
+  text-align: center;
+  color: #a0acac;
+  font-size: 25rpx;
+}

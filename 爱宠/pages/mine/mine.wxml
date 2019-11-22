@@ -1,0 +1,146 @@
+<!--pages/ucenter/index/index.wxml-->
+<view class='container'>
+  <view class="user">
+    <view class='box-white'>
+      <view class='users'>
+        <view class="avatar flex-item" style='display:inherit;'>
+          <!-- <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image> -->
+          <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        </view>
+        <view class="user-info flex-item">
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </view>
+      </view>
+      <view class='me'>
+        <view class='me-item' bindtap='toAnswer' data-index="1">
+          <view class='me-name'>我的发布</view>
+          <view class='me-xx'>{{count1}}</view>
+        </view>
+
+        <view class='me-item' style='border-left: solid 0.5px #dfdfdfaf;' bindtap='toAnswer' data-index="2" wx:if="{{role}}">
+          <view class='me-name'>我的回答</view>
+          <view class='me-xx'>{{count2}}</view>
+        </view>
+        <view class='me-item' style='border-left: solid 0.5px #dfdfdfaf;' bindtap='getMessage' data-index="3" wx:else>
+          <view class='me-name'>我的消息</view>
+          <view class='me-xx'>{{messageCount}}</view>
+        </view>
+      </view>
+
+
+
+    </view>
+  </view>
+
+
+  <view class="my">
+    <view class="my-item flex-wrp">
+      <view class="myitem-icon flex-item">
+        <image src="../../../static/images/database.png" class='my-icon'></image>
+      </view>
+      <view class="myitem-name flex-item" bindtap='toMyWallet'>
+        <text>我的钱包</text>
+      </view>
+      <view class="myitem-righticon flex-item">
+        <image src="../../../static/images/angle-right.png" class='my-righticon'></image>
+      </view>
+    </view>
+    <view class="my-item flex-wrp" bindtap='toMyCollection'>
+      <view class="myitem-icon flex-item">
+        <image src="../../../static/images/wdgz.png" class='my-icon'></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>收藏的问题</text>
+      </view>
+      <view class="myitem-righticon flex-item">
+        <image src="../../../static/images/angle-right.png" class='my-righticon'></image>
+      </view>
+    </view>
+    <view class="my-item flex-wrp" bindtap='toMyReport'>
+      <view class="myitem-icon flex-item">
+        <image src="../../../static/images/wdbg.png" class='my-icon'></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>我的报告单</text>
+      </view>
+      <view class="myitem-righticon flex-item">
+        <image src="../../../static/images/angle-right.png" class='my-righticon'></image>
+      </view>
+    </view>
+
+    <view class="my-item flex-wrp" bindtap='toMyOrder'>
+      <view class="myitem-icon flex-item">
+        <image src="../../../static/images/wdyy.png" class='my-icon'></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>我的预约</text>
+      </view>
+      <view class="myitem-righticon flex-item">
+        <image src="../../../static/images/angle-right.png" class='my-righticon'></image>
+      </view>
+    </view>
+
+    <view class="my-item flex-wrp" bindtap='collectDoctor'>
+      <view class="myitem-icon flex-item">
+        <image src="../../../static/images/follow.png" class='my-icon'></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>关注的医生</text>
+      </view>
+      <view class="myitem-righticon flex-item">
+        <image src="../../../static/images/angle-right.png" class='my-righticon'></image>
+      </view>
+    </view>
+
+    <view class="my-item flex-wrp" bindtap='toBinding'>
+      <view class="myitem-icon flex-item">
+        <image src="../../../static/images/doctor.png" class='my-icon'></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>绑定手机</text>
+      </view>
+      <view class="myitem-righticon flex-item">
+        <text class='bdtext'>{{bindText}}</text>
+        <image src="../../../static/images/angle-right.png" class='my-righticon'></image>
+      </view>
+    </view>
+
+    <view class="my-item flex-wrp" bindtap='toExpertBinding'>
+
+      <view class="myitem-icon flex-item">
+        <image src="../../../static/images/rz.png" class='my-icon'></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>专家认证</text>
+      </view>
+      <view class="myitem-righticon flex-item">
+        <image src="../../../static/images/angle-right.png" class='my-righticon'></image>
+      </view>
+    </view>
+    <view class="my-item flex-wrp" bindtap='toFeedBack'>
+      <view class="myitem-icon flex-item">
+        <image src="../../../static/images/yjfk.png" class='my-icon'></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>意见反馈</text>
+      </view>
+      <view class="myitem-righticon flex-item">
+        <image src="../../../static/images/angle-right.png" class='my-righticon'></image>
+      </view>
+    </view>
+    <!-- <view class="my-item flex-wrp" bindtap='toRecord'>
+
+      <view class="myitem-icon flex-item">
+        <image src="../../../static/images/rz.png" class='my-icon'></image>
+      </view>
+      <view class="myitem-name flex-item">
+        <text>语音</text>
+      </view>
+      <view class="myitem-righticon flex-item">
+        <image src="../../../static/images/angle-right.png" class='my-righticon'></image>
+      </view>
+    </view> -->
+      <view class="msg1">©温州市卫生健康委员会</view>
+  </view>
+
+</view>

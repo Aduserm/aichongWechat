@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/mine/mine",
+    "pages/release/release"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#faa755",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "selectedColor": "#666",
+    "color": "#666",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/images/home.png",
+        "selectedIconPath": "static/images/home-on.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/release/release",
+        "iconPath": "static/images/ask.png",
+        "selectedIconPath": "static/images/ask-on.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "static/images/user.png",
+        "selectedIconPath": "static/images/user-on.png",
+        "text": "我的"
+      }
+    ]
+  }
+}
